@@ -4,19 +4,17 @@
 <meta charset="UTF-8">
 <meta name="description" content="This is the Page Description.">
 <meta name="author" content="Firstname Lastname">
-<!--References: 
-https://www.youtube.com/watch?v=qdcPmQdrJac  
-https://www.youtube.com/watch?v=Dgp0tEKJj-g  
-https://www.youtube.com/watch?v=6hEjUIRuGSU 
-https://www.youtube.com/watch?v=CQrMm8MsE3I-->
 <title>Page Title</title>
 <a href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="assets/javascript/game.js"></script>
 </head>
 <body>
-        
-
-
+    <script>
+    var naTo = ["Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf"];
+    var naTo = naTo[Math.floor(Math.random() * naTo.length)];
+    console.log(naTo);
+    document.getElementById("naTo").textContent = naTo;
+    </script>
 
 </body>
 </html>

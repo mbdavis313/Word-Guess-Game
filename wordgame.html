@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="Basic Hangman game using NATO Words." content="NATO Word Game">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATO Word Game</title>
+<script src="assets/javascript/game.js"></script>
+<!--Base Code from “JavaScript for kids by Nick Morgan.-->
+<!--Modified by Marvin Davis from Youtube instructional video by Sarah Shagam.-->
+
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+</head>
+<body>
+
+    <!--************* HOMEWORK UNSTRUCTIONS *************-->
+
+    <!--Option Two: Word Guess Game (Recommended)-->
+    <!--Watch the demo](https://youtu.be/W-IJcC4tYFI-->
+    <!--Create a theme for your game!-->
+    <!--The word guess game is similar to the letter guessing game, except you will program it in an 
+        object-oriented style. That means instead of looping for user prompts, you will write a message 
+        handler for the keypress event. That will get called every time a letter is guessed. 
+        All your game code can go inside the message handler, but any functions you write should be placed 
+        outside the handler. Also, do the following:
+
+   *Show the instructions in the HTML: press any key to guess a letter!
+   *Instead of randomly choosing a letter from an array of letters, your code will randomly choose a word 
+    from an array of words.
+   *Display underscores for each letter in the selected word. If the word is `madonna`, display it like this 
+    when the game starts: `_ _ _ _ _ _ _`.
+   *As the user guesses the correct letters, reveal them: `m a d o _  _ a`.
+   *After the user wins/loses the game should automatically call a function to reset the game and give the 
+    user another word to guess.-->
+
+    <!--Display: Wins, Current Word length in "___", Number of Guesses Remaining, Letters Already Guessed,
+    as m a d o _  _ a.-->
+    <!--Prohibit entry of letters already guessed.-->
+
+
+
+<!--EXAMPLE: Event Listener for a key that was pressed.:-->
+
+    <!--<input type="text" id="demo">
+<script>
+document.getElementById("demo").addEventListener("keypress", myFunction);
+
+function myFunction() {
+  document.getElementById("demo").style.backgroundColor = "red";
+}
+</script> -->
+
+<!--EXAMPLE: This displays a key that was pressed.-->
+
+<!--<p>Press a key on the keyboard in the input field to disply the pressed key.</p>
+<input type="text" size="40" onkeypress="myFunction(event)">
+<p id="demo"></p>
+
+<script>
+function myFunction(event) {
+  var x = event.which;
+  }
+</script>-->
+
+
+<!--<h1>Word Guessing Game</h1>
+<h2>Press any key to guess a letter.</h2>-->
+    <!--This randomly chooses a word from an array of words and was tested successfully.-->
+    <!--<p id="naTo"></p>-->
+    
+    
+   <!--var naTo = ["Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliett", 
+   "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", 
+   "Victor", "Whiskey", "Xray", "Yankee", "Zulu"];
+   var naTo = naTo[Math.floor(Math.random() * naTo.length)];
+   console.log(naTo);
+   document.getElementById("naTo").textContent = naTo;
+   var transF = naTo;
+  console.log(transF);-->
+    
+    
+
+<!--<input type="text" size="40" onkeypress="myFunction(event)">
+    
+<p id="demo"></p>
+
+<script>
+function myFunction(event) {
+  var x = event.which;
+  }
+</script> -->
+<script>
+// NATO Word Array  
+var words = ["abcdefg", "hijkl", "abc", "mnopq", "rstuv", "wxyz", "aaa"];
+
+  //  var words = ["Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliett", 
+   // "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", 
+   // "Victor", "Whiskey", "Xray", "Yankee", "Zulu"];   
+    
+
+// Pick Word From Array
+var word = words[Math.floor(Math.random() * words.length)];
+
+// Setup the answerArray to show how many letters there are using spaces.
+// *************** Main Game Loop ***************
+var answerArray = [];
+for (var i = 0; i < word.length; i++) {
+  answerArray[i] = " _ ";
+}
+
+// Create variable to hold the number of remaining letters to be guessed.
+var remainingLetters = word.length;
+
+// *************** NEEDS TO BE REWITTEN IN OBJECT ORIENTED STYLE ***************
+
+// While there are still letters to be guessed.
+while (remainingLetters > 0) {
+  // Show player progress
+  alert(answerArray.join(""));
+  // Get a guess from player
+  var guess = prompt("Guess a letter, or click Cancel to Stop Playing.");
+  // If the guess is blank or Cancel selected
+  if (guess == null) {
+    // Exit the game loop
+    break;
+    // If the guess is more than one letter or no letters
+  } else if (guess.length !== 1) {
+    // Alert player to guess a single letter only
+    alert("Please enter a single letter.");
+  } else {
+    // Update the game state with the guess
+    for (var j = 0; j < word.length; j++) {
+      // If the letter player guessed is in the word at the point of index
+      if (word[j] == guess) {
+        // Update the answerArray with the letter they guessed at the point of index
+        answerArray[j] = guess;
+        // Subtract one from remaining letters
+        remainingLetters--;
+          
+      }
+    }
+  }
+  // *************** End of Game Loop ***************
+ }
+ // *************** THERE IS A BUG HERE ***************
+ // When you do not select all letters or a letter twice, "Excellent! The word was " is displayed.
+ // See lines 128 to 139 for debugging,
+ 
+// Let player know the word
+alert(answerArray.join(" "));
+// Congratulate player
+alert("Excellent! The word was " + word);
+</script>
+
+<!--REFERENCES-->
+<!--https://stackoverflow.com/questions/42271965/displaying-guessed-letters-using-javascript-->
+<!--https://stackoverflow.com/questions/44229476/replacing-underscores-with-letters-of-corresponding-word-in-hangman-game-in-java-->
+<!--https://www.youtube.com/watch?v=qdcPmQdrJac-->
+<!--https://www.youtube.com/watch?v=SvPtEr9tblU-->
+<!--https://www.freecodecamp.org/news/the-complete-guide-to-loops-in-javascript-f5e242921d8c/-->
+
+
+<!--<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>-->
+
+</body>
+</html>

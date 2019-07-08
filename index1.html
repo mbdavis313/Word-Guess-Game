@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="This is the Page Description.">
+<meta name="author" content="Firstname Lastname">
+<title>Page Title</title>
+<a href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="assets/javascript/game.js"></script>
+</head>
+<body>
+
+    <!--Option Two: Word Guess Game (Recommended)-->
+    <!--Watch the demo](https://youtu.be/W-IJcC4tYFI-->
+    <!--Create a theme for your game!-->
+    <!--The word guess game is similar to the letter guessing game, except you will program it in an 
+        object-oriented style. That means instead of looping for user prompts, you will write a message 
+        handler for the keypress event. That will get called every time a letter is guessed. 
+        All your game code can go inside the message handler, but any functions you write should be placed 
+        outside the handler. Also, do the following:
+
+   *Show the instructions in the HTML: press any key to guess a letter!
+   *Instead of randomly choosing a letter from an array of letters, your code will randomly choose a word 
+    from an array of words.
+   *Display underscores for each letter in the selected word. If the word is `madonna`, display it like this 
+    when the game starts: `_ _ _ _ _ _ _`.
+   *As the user guesses the correct letters, reveal them: `m a d o _  _ a`.
+   *After the user wins/loses the game should automatically call a function to reset the game and give the 
+    user another word to guess.-->
+
+    <!--Display: Wins, Current Word length in "___", Number of Guesses Remaining, Letters Already Guessed,
+    as m a d o _  _ a.-->
+    <!--Prohibit entry of letters already guessed.-->
+
+
+
+<!--EXAMPLE: Event Listener for a key that was pressed.:-->
+
+    <!--<input type="text" id="demo">
+<script>
+document.getElementById("demo").addEventListener("keypress", myFunction);
+
+function myFunction() {
+  document.getElementById("demo").style.backgroundColor = "red";
+}
+</script> -->
+
+<!--EXAMPLE: This displays a key that was pressed.-->
+
+<!--<p>Press a key on the keyboard in the input field to disply the pressed key.</p>
+<input type="text" size="40" onkeypress="myFunction(event)">
+<p id="demo"></p>
+
+<script>
+function myFunction(event) {
+  var x = event.which;
+  }
+</script>-->
+
+
+<h1>Word Guessing Game</h1>
+<h2>Press any key to guess a letter.</h2>
+    <!--This randomly chooses a word from an array of words and was tested successfully.-->
+    <p id="naTo"></p>
+    
+    <script>
+    var naTo = ["Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliett", 
+    "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", 
+    "Victor", "Whiskey", "Xray", "Yankee", "Zulu"];
+    var naTo = naTo[Math.floor(Math.random() * naTo.length)];
+    console.log(naTo);
+    document.getElementById("naTo").textContent = naTo;
+    </script>
+
+<!--<input type="text" size="40" onkeypress="myFunction(event)">
+    
+<p id="demo"></p>
+
+<script>
+function myFunction(event) {
+  var x = event.which;
+  }
+</script> -->
+
+
+    
+
+
+
+
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html>
