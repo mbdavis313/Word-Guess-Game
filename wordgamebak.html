@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="Basic Hangman game using NATO Words." content="NATO Word Game">
+<meta name="Basic Hangman game using NATO Words." content="NATO Word Learning Game">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NATO Word Game</title>
+<title>NATO Word Learning Game</title>
 <script src="assets/javascript/game.js"></script>
 <!--Base Code from “JavaScript for kids by Nick Morgan.-->
 <!--Modified by Marvin Davis from Youtube instructional video by Sarah Shagam.-->
@@ -92,15 +92,17 @@ function myFunction(event) {
 </script> -->
 <script>
 // NATO Word Array  
-var words = ["abcdefg", "hijkl", "abc", "mnopq", "rstuv", "wxyz", "aaa"];
+var natoWords = ["alpha", "bravo", "charlie", "delta", "echo", "foxtrot", "golf", "hotel", "india", "juliett", 
+   "kilo", "lima", "mike", "november", "oscar", "papa", "quebec", "romeo", "sierra", "tango", "uniform", 
+   "victor", "whiskey", "xray", "yankee", "zulu"];
 
-  //  var words = ["Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliett", 
-   // "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", 
-   // "Victor", "Whiskey", "Xray", "Yankee", "Zulu"];   
+  //  var words = ["alfa", "bravo", "charlie", "delta", "echo", "foxtrot", "golf", "hotel", "india", "juliett", 
+   // "kilo", "lima", "mike", "november", "oscar", "papa", "quebec", "romeo", "sierra", "tango", "uniform", 
+   // "victor", "whiskey", "xray", "yankee", "zulu"];   
     
 
 // Pick Word From Array
-var word = words[Math.floor(Math.random() * words.length)];
+var word = natoWords[Math.floor(Math.random() * natoWords.length)];
 
 // Setup the answerArray to show how many letters there are using spaces.
 // *************** Main Game Loop ***************
